@@ -1,0 +1,16 @@
+{
+    "config": {
+      "classmap-authoritative": true
+    },
+    "autoload": {
+      "psr-4": {
+        "Scheibling\\iTop\\Extension\\": "src"
+      }
+    },
+    "name": "scheibling/itop-bpmnviewer",
+    "type": "itop-extension",
+    "description": "BPMN2 Viewer for iTop Models",
+    "require": {
+      "composer-runtime-api": "^2.0"
+    }
+  }

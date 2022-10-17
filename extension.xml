@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension format="1.0">
+  <extension_code>iTop BPMN Viewer</extension_code>
+  <company>scheiblingco</company>
+  <author><![CDATA[Lars Scheibling]]></author>
+  <version>1.0.0</version>
+  <label><![CDATA[iTop BPMN Viewer]]></label>
+  <description><![CDATA[BPMN2 viewer for iTop]]></description>
+  <mandatory>false</mandatory>
+  <itop_version_min>3.0.0</itop_version_min>
+  <more_info_url>https://github.com/scheibling/itop-bpmnviewer</more_info_url>
+</extension>
