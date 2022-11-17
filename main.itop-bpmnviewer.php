@@ -35,7 +35,11 @@ class BPMNViewer extends AbstractApplicationUIExtension
 
                     .bio-properties-panel-collapsible-entry-entries .bio-properties-panel-input
                     {
-                        font-size: 1.2em;
+                        font-size: 1.17rem !important;
+                        font-family: "Raleway", "sans-serif", "system-ui";
+                        font-style: normal;
+                        color: rgb(64, 75, 90);
+                        font-weight: 500;
                         background: none;
                         border: none;
                         pointer-events: none;
@@ -44,11 +48,13 @@ class BPMNViewer extends AbstractApplicationUIExtension
 
                     .bio-properties-panel-collapsible-entry-entries .bio-properties-panel-input[id$="-name"]
                     {
-                        font-size: 1.5em !important;
-                        margin-top: 2em;
+                        font-family: "Raleway", "sans-serif", "system-ui";
+                        font-style: normal;
+                        color: rgb(33, 41, 52);
+                        font-weight: 600;
+                        margin-top: 1.5rem;
                     }
 
-                    
                     #processEditorContainer h2 {
                         font-size: 1.4em;
                     }
