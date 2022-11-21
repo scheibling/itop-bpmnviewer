@@ -13,10 +13,10 @@ jobs:
       - run: |
           cd bpmn-viewer 
           npm ci
-          npm run build
-          cp -f public/app.js ../assets/js/app.js
-          cp -f public/app.css ../assets/css/app.css
-          cp -rf public/bpmn-js* ../assets/css
+          npm run all
+          cp -f ./public/app.js ../assets/js/app.js
+          cp -f ./public/app.css ../assets/css/app.css
+          cp -rf ./public/bpmn-js* ../assets/css
           cd ..
           zip -r itop-bpmn-viewer.zip assets *itop-bpmnviewer.php extension.xml README.md
       - uses: actions/upload-artifact@v2
