@@ -1,12 +1,13 @@
 name: Publish Package to npmjs
 on:
   release:
-    types: [created]
+    types: [created, updated]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - uses: actions/setup-node@v3
         with:
           node-version: '12.22.x'
@@ -19,8 +20,11 @@ jobs:
           cp -rf ./public/bpmn-js* ../assets/css
           cd ..
           zip -r itop-bpmn-viewer.zip assets *itop-bpmnviewer.php extension.xml README.md
-      - uses: actions/upload-artifact@v2
+      
+      - name: Add to release
+        uses: softprops/action-gh-release@v1
         with:
-          name: itop-bpmn-viewer
-          path: itop-bpmn-viewer.zip
+          files: itop-bpmn-viewer.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
