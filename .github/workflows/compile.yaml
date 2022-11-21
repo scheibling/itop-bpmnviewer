@@ -1,0 +1,26 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '12.22.x'
+      - run: |
+          cd bpmn-viewer 
+          npm ci
+          npm run build
+          cp -f public/app.js ../assets/js/app.js
+          cp -f public/app.css ../assets/css/app.css
+          cp -rf public/bpmn-js* ../assets/css
+          cd ..
+          zip -r itop-bpmn-viewer.zip assets *itop-bpmnviewer.php extension.xml README.md
+      - uses: actions/upload-artifact@v2
+        with:
+          name: itop-bpmn-viewer
+          path: itop-bpmn-viewer.zip
+        

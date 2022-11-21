@@ -102,14 +102,5 @@ class BPMNViewer extends AbstractApplicationUIExtension
 
             }
         }
-
-        if (get_class($oObject) == 'Integration' && $bEditMode == false) {
-            $bpmn = $oObject->Get('bpmn_schema');
-            if (strlen($bpmn) > 10) {
-                
-                
-                
-            } 
-        }
     }
 }

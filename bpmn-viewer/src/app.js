@@ -7,23 +7,35 @@ import { BpmnPropertiesPanelModule, BpmnPropertiesProviderModule, ZeebePropertie
 import ZeebeBpmnModdle from 'zeebe-bpmn-moddle/resources/zeebe.json'
 
 var canvas = $('#processEditorContainer');
+var propPanel = $('#js-properties-panel');
+
 console.log("Started loading canvas");
 console.log(canvas);
-console.log(BPMN);
 
-var bpmnModeler = new BpmnModeler({
-  container: canvas,
-  propertiesPanel: {
-    parent: '#js-properties-panel'
-  },
-  additionalModules: [
-    BpmnPropertiesPanelModule,
-    BpmnPropertiesProviderModule,
-    ZeebePropertiesProviderModule
-  ],
-  moddleExtensions: {
-    zeebe: ZeebeBpmnModdle
-  }
-});
+if (propPanel !== undefined) {
+  var bpmnModeler = new BpmnModeler({
+    container: canvas,
+    propertiesPanel: {
+      parent: '#js-properties-panel'
+    },
+    additionalModules: [
+      BpmnPropertiesPanelModule,
+      BpmnPropertiesProviderModule,
+      ZeebePropertiesProviderModule
+    ],
+    moddleExtensions: {
+      zeebe: ZeebeBpmnModdle
+    }
+  });
+}
+else {
+  var bpmnModeler = new BpmnModeler({
+    container: canvas,
+    additionalModules: [],
+    moddleExtensions: {
+      zeebe: ZeebeBpmnModdle
+    }
+  });
+}
 
 bpmnModeler.importXML(BPMN);
