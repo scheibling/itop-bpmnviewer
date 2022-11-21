@@ -17,7 +17,7 @@ jobs:
           npm run all
           cp -f ./public/app.js ../assets/js/app.js
           cp -f ./public/app.css ../assets/css/app.css
-          cp -rf ./public/bpmn-js* ../assets/css
+          cp -rf ./public/vendor/bpmn-j* ../assets/css
           cd ..
           zip -r itop-bpmn-viewer.zip assets *itop-bpmnviewer.php extension.xml README.md
       
